@@ -7,16 +7,22 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Users {
-    String userName;
-    int age;
+    static String userName;
+    static int age;
+    static Scanner in = new Scanner(System.in);
 
-    public void addUser() {
-        Scanner in = new Scanner(System.in);
+    public static void scan() {
         System.out.print("Введите имя: ");
         userName = in.nextLine();
         System.out.print("Введите возраст: ");
         age = in.nextInt();
+
+    }
+
+    public void addUserInFile() {
+
         File myFile = new File("C:/Users/drag/Desktop/SC11/cash/Users.txt");
+
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));
             String lineSeparator = System.getProperty("line.separator");
@@ -27,6 +33,7 @@ public class Users {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Пользователь успешно добавлен!");
 
 
     }

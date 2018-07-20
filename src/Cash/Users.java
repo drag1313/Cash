@@ -1,14 +1,12 @@
 package Cash;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Users {
-
+    private static final String FILENAME = "C:\\Users\\drag\\Desktop\\SC11\\Cash\\Users.txt";
     static String userName;
+    String name;
 
     static int age;
     Scanner in = new Scanner(System.in);
@@ -34,6 +32,18 @@ public class Users {
             writer.write(age + lineSeparator);
             writer.flush();
             writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    void seaarchUserInFile(){
+        try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
+            while ((name = br.readLine()) != userName) {
+                
+
+
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }

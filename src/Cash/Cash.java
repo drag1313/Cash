@@ -15,10 +15,15 @@ public class Cash {
         System.out.println();
     }
 
-    void searchUserWHM(String userName) {
+    boolean searchUserWHM(String userName) {
         if (hm.containsKey(new String(userName))) {
             String get = String.valueOf(hm.get(new String(userName)));
             System.out.println("Возраст: " + get);
+            return true;
+        }else {
+            System.out.println("Данный пользователь в кеше не обнаружен.");
+            System.out.println("Поиск в файле");
+            return false;
         }
     }
 }

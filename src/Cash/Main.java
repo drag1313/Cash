@@ -2,6 +2,8 @@ package Cash;
 
 import java.util.Scanner;
 
+import static Cash.Users.userName;
+
 public class Main {
     Scanner in = new Scanner(System.in);
 
@@ -34,7 +36,7 @@ public class Main {
             int num = in.nextInt();
             if (num == 1) {
                 user.scan();
-                cash.addUserInWHM(user.userName, user.age);
+                cash.addUserInWHM(userName, user.age);
                 user.addUserInFile();
                 System.out.println("Новый пользователь успешно добавлен!");
                 cash.getSize();
@@ -43,7 +45,11 @@ public class Main {
                 in.nextLine();
                 searchName = in.nextLine();
                 System.out.println("Поиск  " + searchName);
-                cash.searchUserWHM(searchName);
+                if(cash.searchUserWHM(searchName)){
+                    cash.searchUserWHM(userName);
+                    }else{
+                    user.seaarchUserInFile();
+                }
                 System.out.println();
                 break;
             } else {

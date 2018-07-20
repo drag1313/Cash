@@ -39,7 +39,7 @@ public class Users {
     void seaarchUserInFile(){
         try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
             while ((name = br.readLine()) != userName) {
-                
+              if
 
 
             }

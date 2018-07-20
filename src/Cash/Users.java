@@ -7,19 +7,23 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Users {
-    static String userName;
-    static int age;
-    static Scanner in = new Scanner(System.in);
 
-    public static void scan() {
-        System.out.print("Введите имя: ");
+    static String userName;
+
+    static int age;
+    Scanner in = new Scanner(System.in);
+
+
+    void scan() {
+        System.out.println("Введите имя: ");
         userName = in.nextLine();
-        System.out.print("Введите возраст: ");
+        System.out.println("Введите возраст: ");
         age = in.nextInt();
+        in.nextLine();
 
     }
 
-    public void addUserInFile() {
+    void addUserInFile() {
 
         File myFile = new File("C:/Users/drag/Desktop/SC11/cash/Users.txt");
 
@@ -33,9 +37,7 @@ public class Users {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Пользователь успешно добавлен!");
-
-
     }
+
 
 }

@@ -3,13 +3,22 @@ package Cash;
 import java.util.WeakHashMap;
 
 public class Cash {
-    WeakHashMap<Integer, String> hm = new WeakHashMap<Integer, String>();
+    WeakHashMap<String, Integer> hm = new WeakHashMap<String, Integer>();
 
-   void addUserInWHM(int age, String userName) {
-       hm.put(age,userName);
-       }
-void getSize(){
-    Integer size = hm.size();
-    System.out.println("Размер WeakHashMap :"+size);
-}
+    void addUserInWHM(String userName, int age) {
+        hm.put(userName, age);
+    }
+
+    void getSize() {
+        Integer size = hm.size();
+        System.out.println("Размер WeakHashMap :" + size);
+        System.out.println();
+    }
+
+    void searchUserWHM(String userName) {
+        if (hm.containsKey(new String(userName))) {
+            String get = String.valueOf(hm.get(new String(userName)));
+            System.out.println("Возраст: " + get);
+        }
+    }
 }

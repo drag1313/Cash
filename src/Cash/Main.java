@@ -45,10 +45,10 @@ public class Main {
                 in.nextLine();
                 searchName = in.nextLine();
                 System.out.println("Поиск  " + searchName);
-                if(cash.searchUserWHM(searchName)){
-                    cash.searchUserWHM(userName);
-                    }else{
-                    user.seaarchUserInFile();
+                if (cash.searchUserWHM(searchName)) {
+
+                } else {
+                    user.searchUserInFile(searchName);
                 }
                 System.out.println();
                 break;

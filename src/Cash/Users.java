@@ -36,18 +36,16 @@ public class Users {
             e.printStackTrace();
         }
     }
-    void seaarchUserInFile(){
+
+    void searchUserInFile(String searchName) {
         try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
-            while ((name = br.readLine()) != userName) {
-                
-
-
+            while (!(name = br.readLine()).equals(searchName)) {
+                age = Integer.parseInt(br.readLine());
             }
-
+            age = Integer.parseInt(br.readLine());
+            System.out.printf("Возраст пользователя %s : %d лет  ", searchName, age);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 }

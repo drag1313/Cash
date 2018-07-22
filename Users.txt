@@ -20,8 +20,6 @@ Fedor
 29
 Gogi
 45
-Gogi
-43
 Kazo
 17
 Bobr
@@ -34,7 +32,13 @@ Pavel
 24
 Fedor
 34
-fifo
-23
-fifo
-24
+Frodya
+94
+Grisha
+15
+Malik
+19
+Medved
+55
+Volk
+5

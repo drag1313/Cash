@@ -38,3 +38,11 @@ fifo
 23
 fifo
 24
+Lena
+18
+Kate
+17
+Nata
+21
+Merelin
+22

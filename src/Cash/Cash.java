@@ -1,15 +1,17 @@
 package Cash;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.WeakHashMap;
 
-public class Cash {
-    WeakHashMap<String, Integer> hm = new WeakHashMap<String, Integer>();
+class Cash {
+    private Map<String, Integer> hm = new WeakHashMap<>();
 
     void addUserInWHM(String userName, int age) {
         hm.put(userName, age);
     }
 
-    void getSize() {
+    void printSize() {
         Integer size = hm.size();
         System.out.println("Размер WeakHashMap :" + size);
         System.out.println();

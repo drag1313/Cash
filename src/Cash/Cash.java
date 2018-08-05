@@ -1,6 +1,5 @@
 package Cash;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -12,7 +11,7 @@ class Cash {
     }
 
     void printSize() {
-        Integer size = hm.size();
+        int size = hm.size();
         System.out.println("Размер WeakHashMap :" + size);
         System.out.println();
     }
@@ -23,7 +22,7 @@ class Cash {
             System.out.printf("Возраст пользователя %s : %s лет  ", userName, get);
             return true;
         } else {
-            System.out.println("Данный пользователь в кеше не обнаружен.");
+            System.out.println("Данный пользователь в WHM-кеше не обнаружен.");
             System.out.println("Поиск в файле");
             return false;
         }

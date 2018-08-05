@@ -3,21 +3,15 @@ package Cash;
 import java.util.Scanner;
 
 public class Main {
-    Scanner in = new Scanner(System.in);
-
-    String searchName;
 
     public static void main(String[] args) {
         Cash cash = new Cash();
         Users user = new Users();
-        Cash2 cash2 = new Cash2();
-
-        hello(cash, user);
-
-
+        LRUCache lruCash = new LRUCache(2);
+        hello(cash, user,lruCash);
     }
 
-    public static void hello(Cash cash, Users user) {
+    public static void hello(Cash cash, Users user,LRUCache lruCash) {
         int x = 0;
         Scanner in = new Scanner(System.in);
         String searchName;
@@ -37,9 +31,13 @@ public class Main {
             if (num == 1) {
                 user.scan();
                 cash.addUserInWHM(user.userName, user.age);
+                lruCash.addUserInLHM(user.userName,user.age);
+
+
                 user.addUserInFile();
                 System.out.println("Новый пользователь успешно добавлен!");
                 cash.printSize();
+                lruCash.printSize();
             } else if (num == 2) {
                 System.out.println("ВВедите имя пользователя:  ");
                 in.nextLine();
@@ -54,7 +52,7 @@ public class Main {
             } else {
                 break;
             }
-            x=1;
+            x = 1;
         }
     }
 

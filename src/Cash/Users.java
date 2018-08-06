@@ -3,7 +3,7 @@ package Cash;
 import java.io.*;
 import java.util.Scanner;
 
-public class Users {
+class Users {
     private static final String FILENAME = "C:\\Users\\drag\\Desktop\\SC11\\Cash\\Users.txt";
     static String userName;
     String name;

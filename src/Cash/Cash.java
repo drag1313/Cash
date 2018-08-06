@@ -17,8 +17,8 @@ class Cash {
     }
 
     boolean searchUserWHM(String userName) {
-        if (hm.containsKey(new String(userName))) {
-            String get = String.valueOf(hm.get(new String(userName)));
+        if (hm.containsKey(userName)) {
+            String get = String.valueOf(hm.get(userName));
             System.out.printf("Возраст пользователя %s : %s лет  ", userName, get);
             return true;
         } else {

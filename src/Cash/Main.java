@@ -41,10 +41,8 @@ public class Main {
                 in.nextLine();
                 searchName = in.nextLine();
                 System.out.println("Поиск  " + searchName);
-                if (cash.searchUserWHM(searchName)) {
-                    System.out.println("Объект находился в WHM-кеше");
-                } else if (lruCash.searchUserLHM(searchName)) {
-                    System.out.println("Объект находился в Lru-кеше");
+                if (cash.searchUserWHM(searchName) || lruCash.searchUserLHM(searchName)) {
+                    System.out.println("Объект находился кеше");
                 } else {
                     user.searchUserInFile(searchName);
                     System.out.println("Объект находился в файле");

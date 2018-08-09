@@ -6,22 +6,21 @@ import java.util.Map;
 
 class LRUCache extends LinkedHashMap<String, Integer> {
     private int maxSize;
-    private LinkedHashMap<String, Integer> LRU = new LinkedHashMap<>();
 
     LRUCache(int capacity) {
-        super(capacity, 0.75f, true);
+        super(capacity, 1.1f, true);
         this.maxSize = capacity;
     }
 
     void printSize() {
-        int size = LRU.size();
+        int size = this.size();
         System.out.println("Размер LinkedHashMap :" + size);
         System.out.println();
     }
 
     boolean searchUserLHM(String userName) {
-        if (LRU.containsKey(userName)) {
-            String get = String.valueOf(LRU.get(userName));
+        if (this.containsKey(userName)) {
+            String get = String.valueOf(this.get(userName));
             System.out.printf("Возраст пользователя %s : %s лет  ", userName, get);
             return true;
         } else {
@@ -32,7 +31,7 @@ class LRUCache extends LinkedHashMap<String, Integer> {
     }
 
     void addUserInLHM(String userName, int age) {
-        LRU.put(userName, age);
+        this.put(userName, age);
     }
 
     @Override
